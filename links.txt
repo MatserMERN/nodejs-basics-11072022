@@ -1,0 +1,36 @@
+HTTP Methods
+------------
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+Status Codes
+--------------
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+TO download the mongoDB
+
+https://www.mongodb.com/try/download/community
+
+To use Mongoose
+
+https://mongoosejs.com/docs/guide.html
+
+
+Issues connection to Sql 
+
+http://mytechlearning.blogspot.com/2017/08/nodejs-mssql-connectionerror-failed-to.html
+
+ORM for Relational Databases
+------------------------------
+https://sequelize.org/docs/v6/getting-started/
+
+SQL Server download
+-------------------
+https://www.microsoft.com/en-in/sql-server/sql-server-downloads?SilentAuth=1
+
+SQL SEREVR step by step installation
+-------------------------------------
+https://computingforgeeks.com/install-sql-server-developer-edition-on-windows-server/
+
+Download SSMS
+--------------
+https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms-19?view=sql-server-ver16
