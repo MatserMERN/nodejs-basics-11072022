@@ -1,6 +1,8 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import cors from "cors"
+
 import {
     Student,
     getStudents,
@@ -15,6 +17,7 @@ const router = express.Router()
 dotenv.config()
 
 app.use(express.json()) // To get the posted data (req.body)
+app.use(cors())
 
 // Build Connection String 
 

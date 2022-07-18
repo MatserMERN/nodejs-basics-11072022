@@ -3,11 +3,14 @@ import mongoose from "mongoose"
 import dotenv from "dotenv"
 import bcrypt from "bcryptjs"
 import {User} from "../models/user.js"
+import cors from "cors"
 dotenv.config()
 
 const app = express()
 const router = express.Router()
 app.use(express.json()) // To get the posted data (req.body)
+app.use(cors())
+
 
 // Build Connection String 
 const mongoDbConString = `mongodb://${process.env.MONGODB_SERVER}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DATABASE}`
@@ -30,13 +33,16 @@ router.post("/register", (req, res) => {
     const {username, email, password} = req.body
     const salt = parseInt(process.env.PASSWORD_SALT)
     bcrypt.hash(password, salt, async(err, hash) => {
+        if(err) {
+            throw err
+        }
         const user = new User({
             username,
             email, 
             password: hash
         })
         const output = await user.save()
-        res.json(`User : ${output.username} registered successfully`)
+        res.json({isUserRegistered: true, message: `${output.username} registered successfully`})
     })
 })
 
@@ -50,7 +56,7 @@ router.post("/login",  async (req, res) => {
                 res.status(500).send(err)
             }
             if(bcryptResponse){
-                res.json("Loggedin Sucessfully")
+                res.json({isValidLogin: true, message: "Loggedin Sucessfully"})
             } else {
                 res.status(500).send("Invalid login")
             }

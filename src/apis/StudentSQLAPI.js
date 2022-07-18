@@ -1,11 +1,14 @@
 import express from "express"
 import sql from "mssql"
 import dotenv from "dotenv"
+import cors from "cors"
+
 dotenv.config()
 const app = express()
 const router = express.Router()
 
 app.use(express.json())
+app.use(cors())
 
 
 const dbConfig = {
